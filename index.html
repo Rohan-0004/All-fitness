@@ -1,0 +1,2385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALL FITNESS | Premium Gym Equipment</title>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#080808;
+    color:#fff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.container{
+    width:90%;
+    max-width:1250px;
+    margin:auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(8,8,8,.96);
+    border-bottom:1px solid #272727;
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    height:75px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:27px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#ff3b00;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    font-size:14px;
+    font-weight:bold;
+}
+
+.nav-links a:hover{
+    color:#ff3b00;
+}
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.cart-button{
+    background:#191919;
+    border:1px solid #333;
+    color:#fff;
+    padding:11px 16px;
+    border-radius:5px;
+}
+
+.cart-count{
+    background:#ff3b00;
+    padding:3px 7px;
+    border-radius:20px;
+    margin-left:5px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.95),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:720px;
+}
+
+.hero-tag{
+    display:inline-block;
+    color:#ff3b00;
+    border:1px solid #ff3b00;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:70px;
+    line-height:.98;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#ff3b00;
+}
+
+.hero p{
+    color:#c8c8c8;
+    line-height:1.7;
+    font-size:18px;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 24px;
+    border-radius:5px;
+    font-weight:bold;
+    margin-right:8px;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#ff3b00;
+}
+
+.btn-primary:hover{
+    background:#ff5722;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:1px solid #555;
+}
+
+.btn-outline:hover{
+    border-color:#ff3b00;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats{
+    background:#111;
+    border-bottom:1px solid #222;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+.stat{
+    text-align:center;
+    padding:30px 15px;
+    border-right:1px solid #292929;
+}
+
+.stat:last-child{
+    border:none;
+}
+
+.stat h3{
+    color:#ff3b00;
+    font-size:27px;
+}
+
+.stat p{
+    color:#aaa;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+section{
+    padding:85px 0;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-heading .small{
+    color:#ff3b00;
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+.section-heading h2{
+    font-size:42px;
+    margin:10px 0;
+}
+
+.section-heading p{
+    color:#999;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.categories{
+    background:#0d0d0d;
+}
+
+.category-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.category{
+    padding:28px 15px;
+    background:#151515;
+    border:1px solid #292929;
+    text-align:center;
+    border-radius:7px;
+    transition:.25s;
+}
+
+.category:hover{
+    transform:translateY(-5px);
+    border-color:#ff3b00;
+}
+
+.category-icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.category h3{
+    font-size:16px;
+}
+
+.category p{
+    color:#888;
+    font-size:12px;
+    margin-top:6px;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    background:#080808;
+}
+
+.shop-controls{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+    flex-wrap:wrap;
+}
+
+.search-box{
+    flex:1;
+    min-width:250px;
+}
+
+.search-box input,
+.filter{
+    width:100%;
+    background:#151515;
+    border:1px solid #333;
+    color:#fff;
+    padding:14px;
+    border-radius:5px;
+}
+
+.filter{
+    width:210px;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.product-card{
+    background:#141414;
+    border:1px solid #292929;
+    border-radius:8px;
+    overflow:hidden;
+    transition:.25s;
+}
+
+.product-card:hover{
+    transform:translateY(-6px);
+    border-color:#ff3b00;
+}
+
+.product-image{
+    height:220px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.badge{
+    position:absolute;
+    top:12px;
+    left:12px;
+    background:#ff3b00;
+    padding:6px 9px;
+    border-radius:3px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.product-body{
+    padding:20px;
+}
+
+.product-category{
+    color:#ff3b00;
+    font-size:11px;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+.product-body h3{
+    font-size:19px;
+    margin:7px 0;
+}
+
+.product-description{
+    color:#999;
+    font-size:13px;
+    line-height:1.5;
+    min-height:40px;
+}
+
+.product-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:18px;
+}
+
+.price{
+    font-size:20px;
+    font-weight:bold;
+}
+
+.old-price{
+    color:#777;
+    text-decoration:line-through;
+    font-size:12px;
+    margin-left:5px;
+}
+
+.add-cart{
+    border:none;
+    background:#ff3b00;
+    color:white;
+    padding:10px 12px;
+    border-radius:4px;
+    font-weight:bold;
+}
+
+/* =========================
+   QUALITY
+========================= */
+
+.quality{
+    background:#111;
+}
+
+.quality-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.quality-card{
+    background:#181818;
+    border:1px solid #292929;
+    padding:30px 22px;
+    border-radius:7px;
+}
+
+.quality-icon{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.quality-card h3{
+    margin-bottom:10px;
+}
+
+.quality-card p{
+    color:#999;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* =========================
+   MATERIAL
+========================= */
+
+.material{
+    background:#0b0b0b;
+}
+
+.material-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.material-image{
+    min-height:480px;
+
+    background:
+    linear-gradient(rgba(0,0,0,.2),rgba(0,0,0,.3)),
+    url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1000&q=85");
+
+    background-size:cover;
+    background-position:center;
+    border-radius:10px;
+}
+
+.material-content h2{
+    font-size:45px;
+    margin-bottom:20px;
+}
+
+.material-content h2 span{
+    color:#ff3b00;
+}
+
+.material-content p{
+    color:#aaa;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.material-list{
+    list-style:none;
+}
+
+.material-list li{
+    padding:13px 0;
+    border-bottom:1px solid #252525;
+    color:#ddd;
+}
+
+.material-list li::before{
+    content:"✓";
+    color:#ff3b00;
+    font-weight:bold;
+    margin-right:12px;
+}
+
+/* =========================
+   MACHINES
+========================= */
+
+.machines{
+    background:#111;
+}
+
+.machine-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.machine{
+    background:#181818;
+    border:1px solid #292929;
+    padding:30px 20px;
+    border-radius:7px;
+}
+
+.machine h3{
+    margin-bottom:10px;
+}
+
+.machine p{
+    color:#999;
+    font-size:13px;
+    line-height:1.5;
+}
+
+/* =========================
+   WHY ALL FITNESS
+========================= */
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.why-card{
+    padding:30px;
+    background:#141414;
+    border-left:4px solid #ff3b00;
+}
+
+.why-card h3{
+    margin-bottom:10px;
+}
+
+.why-card p{
+    color:#999;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta{
+    text-align:center;
+
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.8)),
+    url("https://images.unsplash.com/photo-1546483875-ad9014c88eba?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.cta h2{
+    font-size:50px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#ccc;
+    margin-bottom:25px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    background:#0d0d0d;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+.contact-info{
+    padding:35px;
+    background:#151515;
+    border:1px solid #292929;
+    border-radius:7px;
+}
+
+.contact-info h3{
+    font-size:27px;
+    margin-bottom:15px;
+}
+
+.contact-info p{
+    color:#999;
+    line-height:1.7;
+}
+
+.contact-detail{
+    margin-top:25px;
+    padding:15px 0;
+    border-bottom:1px solid #292929;
+}
+
+.contact-detail strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.contact-detail span{
+    color:#999;
+}
+
+.form{
+    background:#151515;
+    padding:35px;
+    border:1px solid #292929;
+    border-radius:7px;
+}
+
+.form input,
+.form textarea,
+.form select{
+    width:100%;
+    background:#0e0e0e;
+    border:1px solid #333;
+    color:#fff;
+    padding:14px;
+    margin-bottom:15px;
+    border-radius:5px;
+}
+
+.form textarea{
+    height:130px;
+    resize:none;
+}
+
+.form button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#ff3b00;
+    color:#fff;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+/* =========================
+   CART SIDEBAR
+========================= */
+
+.cart-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    z-index:1500;
+    display:none;
+}
+
+.cart{
+    position:absolute;
+    right:0;
+    top:0;
+    height:100%;
+    width:420px;
+    max-width:95%;
+    background:#111;
+    padding:25px;
+    overflow:auto;
+}
+
+.cart-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.close-cart{
+    background:none;
+    border:none;
+    color:#fff;
+    font-size:25px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #292929;
+}
+
+.cart-item h4{
+    font-size:14px;
+}
+
+.cart-item p{
+    color:#ff3b00;
+    margin-top:5px;
+}
+
+.remove{
+    background:none;
+    border:none;
+    color:#777;
+}
+
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+    font-size:20px;
+    font-weight:bold;
+    margin:25px 0;
+}
+
+.whatsapp-order{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#25D366;
+    color:#fff;
+    font-weight:bold;
+    border-radius:5px;
+}
+
+/* =========================
+   WHATSAPP FLOATING
+========================= */
+
+.whatsapp{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    width:58px;
+    height:58px;
+    background:#25D366;
+    color:#fff;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:27px;
+    z-index:1200;
+    box-shadow:0 5px 25px rgba(0,0,0,.5);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#060606;
+    padding:45px 0 25px;
+    border-top:1px solid #222;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:35px;
+}
+
+.footer-brand p{
+    color:#777;
+    line-height:1.7;
+    margin-top:15px;
+    max-width:350px;
+}
+
+.footer-column h4{
+    margin-bottom:15px;
+}
+
+.footer-column a{
+    display:block;
+    color:#777;
+    margin:10px 0;
+    font-size:14px;
+}
+
+.footer-column a:hover{
+    color:#ff3b00;
+}
+
+.copyright{
+    text-align:center;
+    border-top:1px solid #222;
+    padding-top:20px;
+    color:#666;
+    font-size:12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:52px;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .quality-grid,
+    .machine-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stat{
+        border-bottom:1px solid #292929;
+    }
+
+}
+
+@media(max-width:700px){
+
+    section{
+        padding:60px 0;
+    }
+
+    .hero{
+        min-height:75vh;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:15px;
+    }
+
+    .category-grid,
+    .product-grid,
+    .quality-grid,
+    .machine-grid,
+    .why-grid,
+    .material-grid,
+    .contact-grid,
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .material-image{
+        min-height:300px;
+    }
+
+    .section-heading h2{
+        font-size:32px;
+    }
+
+    .cta h2{
+        font-size:35px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="container navbar">
+
+    <a href="#home" class="logo">
+        ALL<span>FITNESS</span>
+    </a>
+
+    <ul class="nav-links">
+
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#quality">Quality</a></li>
+        <li><a href="#machines">Machines</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+    <div class="nav-actions">
+
+        <button class="cart-button" onclick="openCart()">
+            🛒 Cart
+            <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<span class="hero-tag">
+    BUILT FOR SERIOUS TRAINING
+</span>
+
+<h1>
+    EQUIPMENT<br>
+    FOR <span>STRENGTH.</span>
+</h1>
+
+<p>
+    ALL FITNESS provides heavy-duty gym equipment,
+    cast-iron weight plates, dumbbells, barbells,
+    benches and commercial strength machines
+    for serious training environments.
+</p>
+
+<a href="#products" class="btn btn-primary">
+    SHOP EQUIPMENT
+</a>
+
+<a href="#contact" class="btn btn-outline">
+    GET A QUOTE
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<div class="stats">
+
+<div class="container stats-grid">
+
+<div class="stat">
+    <h3>IRON</h3>
+    <p>Heavy-Duty Equipment</p>
+</div>
+
+<div class="stat">
+    <h3>STEEL</h3>
+    <p>Strong Structural Frames</p>
+</div>
+
+<div class="stat">
+    <h3>GYM</h3>
+    <p>Home & Commercial</p>
+</div>
+
+<div class="stat">
+    <h3>ALL</h3>
+    <p>Fitness Solutions</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section class="categories">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="small">SHOP BY CATEGORY</span>
+
+<h2>Everything You Need</h2>
+
+<p>
+    Build your complete training setup.
+</p>
+
+</div>
+
+
+<div class="category-grid">
+
+<div class="category">
+    <div class="category-icon">⚫</div>
+    <h3>Weight Plates</h3>
+    <p>Cast Iron & Coated</p>
+</div>
+
+<div class="category">
+    <div class="category-icon">🏋️</div>
+    <h3>Dumbbells</h3>
+    <p>Fixed & Adjustable</p>
+</div>
+
+<div class="category">
+    <div class="category-icon">〰️</div>
+    <h3>Barbells</h3>
+    <p>Training Bars</p>
+</div>
+
+<div class="category">
+    <div class="category-icon">🪑</div>
+    <h3>Benches</h3>
+    <p>Flat & Adjustable</p>
+</div>
+
+<div class="category">
+    <div class="category-icon">⚙️</div>
+    <h3>Machines</h3>
+    <p>Commercial Equipment</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section class="products" id="products">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="small">ALL FITNESS STORE</span>
+
+<h2>Featured Equipment</h2>
+
+<p>
+    Select equipment and add it to your cart.
+</p>
+
+</div>
+
+
+<div class="shop-controls">
+
+<div class="search-box">
+
+<input
+    type="text"
+    id="search"
+    placeholder="Search dumbbells, plates, machines..."
+    onkeyup="filterProducts()"
+>
+
+</div>
+
+
+<select class="filter" id="categoryFilter" onchange="filterProducts()">
+
+<option value="all">All Categories</option>
+
+<option value="plates">Weight Plates</option>
+
+<option value="dumbbells">Dumbbells</option>
+
+<option value="barbells">Barbells</option>
+
+<option value="benches">Benches</option>
+
+<option value="machines">Machines</option>
+
+</select>
+
+</div>
+
+
+<div class="product-grid" id="productGrid">
+
+
+<!-- PRODUCT 1 -->
+
+<div class="product-card"
+data-category="plates"
+data-name="cast iron weight plate">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=900&q=85');">
+
+<span class="badge">POPULAR</span>
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Weight Plates
+</span>
+
+<h3>Cast Iron Weight Plate</h3>
+
+<p class="product-description">
+    Heavy-duty cast-iron plate for strength training.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹1,299
+    <span class="old-price">₹1,499</span>
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Cast Iron Weight Plate',1299)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 2 -->
+
+<div class="product-card"
+data-category="dumbbells"
+data-name="solid iron dumbbell">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1638536532686-d610adfc8e5b?auto=format&fit=crop&w=900&q=85');">
+
+<span class="badge">HOT</span>
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Dumbbells
+</span>
+
+<h3>Solid Iron Dumbbell</h3>
+
+<p class="product-description">
+    Robust dumbbell designed for repeated strength training.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹1,899
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Solid Iron Dumbbell',1899)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 3 -->
+
+<div class="product-card"
+data-category="barbells"
+data-name="olympic barbell">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85');">
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Barbells
+</span>
+
+<h3>Olympic Training Bar</h3>
+
+<p class="product-description">
+    Strong training bar for compound strength exercises.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹4,999
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Olympic Training Bar',4999)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 4 -->
+
+<div class="product-card"
+data-category="benches"
+data-name="adjustable gym bench">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1598971639058-fab3c3109a00?auto=format&fit=crop&w=900&q=85');">
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Benches
+</span>
+
+<h3>Adjustable Gym Bench</h3>
+
+<p class="product-description">
+    Adjustable bench for pressing and dumbbell exercises.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹8,999
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Adjustable Gym Bench',8999)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 5 -->
+
+<div class="product-card"
+data-category="machines"
+data-name="lat pulldown machine">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85');">
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Machines
+</span>
+
+<h3>Lat Pulldown Machine</h3>
+
+<p class="product-description">
+    Cable-based back training machine for gyms.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹32,999
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Lat Pulldown Machine',32999)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 6 -->
+
+<div class="product-card"
+data-category="machines"
+data-name="leg press machine">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=900&q=85');">
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Machines
+</span>
+
+<h3>Leg Press Machine</h3>
+
+<p class="product-description">
+    Heavy-duty lower-body strength training machine.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹59,999
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Leg Press Machine',59999)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 7 -->
+
+<div class="product-card"
+data-category="plates"
+data-name="rubber coated plate">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85');">
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Weight Plates
+</span>
+
+<h3>Rubber Coated Plate</h3>
+
+<p class="product-description">
+    Durable coated plate designed for gym environments.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹1,599
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Rubber Coated Plate',1599)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PRODUCT 8 -->
+
+<div class="product-card"
+data-category="machines"
+data-name="functional trainer">
+
+<div class="product-image"
+style="background-image:url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=900&q=85');">
+
+<span class="badge">PRO</span>
+
+</div>
+
+<div class="product-body">
+
+<span class="product-category">
+    Machines
+</span>
+
+<h3>Functional Trainer</h3>
+
+<p class="product-description">
+    Versatile cable system for full-body training.
+</p>
+
+<div class="product-bottom">
+
+<div class="price">
+    ₹74,999
+</div>
+
+<button class="add-cart"
+onclick="addToCart('Functional Trainer',74999)">
+    ADD
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     QUALITY
+========================= -->
+
+<section class="quality" id="quality">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="small">QUALITY FIRST</span>
+
+<h2>Built Around Real Specifications</h2>
+
+<p>
+    Quality should be demonstrated through measurable product details.
+</p>
+
+</div>
+
+
+<div class="quality-grid">
+
+<div class="quality-card">
+
+<div class="quality-icon">⚙️</div>
+
+<h3>Metal Construction</h3>
+
+<p>
+    Product specifications can identify cast iron,
+    steel and other materials used in construction.
+</p>
+
+</div>
+
+
+<div class="quality-card">
+
+<div class="quality-icon">⚖️</div>
+
+<h3>Weight Accuracy</h3>
+
+<p>
+    Weight specifications and tolerances should be
+    checked as part of product quality control.
+</p>
+
+</div>
+
+
+<div class="quality-card">
+
+<div class="quality-icon">🛠️</div>
+
+<h3>Strong Frames</h3>
+
+<p>
+    Equipment frames should be designed with suitable
+    steel sections, welding and structural support.
+</p>
+
+</div>
+
+
+<div class="quality-card">
+
+<div class="quality-icon">✓</div>
+
+<h3>Inspection</h3>
+
+<p>
+    Products can be inspected for dimensions,
+    finish, construction and overall condition.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MATERIAL
+========================= -->
+
+<section class="material" id="about">
+
+<div class="container material-grid">
+
+<div class="material-image"></div>
+
+<div class="material-content">
+
+<h2>
+    IRON. STEEL.<br>
+    <span>ALL FITNESS.</span>
+</h2>
+
+<p>
+    We focus on gym equipment where construction,
+    durability and practical specifications matter.
+    Our catalogue includes traditional cast-iron
+    plates, dumbbells, barbells, benches and
+    commercial strength machines.
+</p>
+
+<ul class="material-list">
+
+<li>Cast Iron Weight Plates</li>
+
+<li>Solid Metal Dumbbells</li>
+
+<li>Heavy-Duty Steel Frames</li>
+
+<li>Durable Finishes</li>
+
+<li>Commercial Strength Equipment</li>
+
+<li>Custom Gym Equipment Packages</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MACHINES
+========================= -->
+
+<section class="machines" id="machines">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="small">COMMERCIAL EQUIPMENT</span>
+
+<h2>Strength Machines</h2>
+
+<p>
+    Complete equipment for professional training spaces.
+</p>
+
+</div>
+
+
+<div class="machine-grid">
+
+<div class="machine">
+<h3>Chest Press</h3>
+<p>Controlled chest pressing movement.</p>
+</div>
+
+<div class="machine">
+<h3>Lat Pulldown</h3>
+<p>Back and upper-body pulling exercise.</p>
+</div>
+
+<div class="machine">
+<h3>Leg Press</h3>
+<p>Heavy lower-body strength training.</p>
+</div>
+
+<div class="machine">
+<h3>Shoulder Press</h3>
+<p>Shoulder and upper-body pressing.</p>
+</div>
+
+<div class="machine">
+<h3>Smith Machine</h3>
+<p>Guided barbell training system.</p>
+</div>
+
+<div class="machine">
+<h3>Cable Crossover</h3>
+<p>Versatile cable-based training.</p>
+</div>
+
+<div class="machine">
+<h3>Leg Extension</h3>
+<p>Quadriceps-focused training machine.</p>
+</div>
+
+<div class="machine">
+<h3>Functional Trainer</h3>
+<p>Multi-purpose cable training system.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     WHY US
+========================= -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="small">WHY ALL FITNESS</span>
+
+<h2>Made For Serious Gyms</h2>
+
+</div>
+
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<h3>Home Gyms</h3>
+
+<p>
+    Build a compact training setup with
+    plates, dumbbells, benches and bars.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>Commercial Gyms</h3>
+
+<p>
+    Equipment packages for professional
+    fitness centres and training facilities.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>Sports Academies</h3>
+
+<p>
+    Strength equipment for athletes,
+    coaches and sports training facilities.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>Bulk Orders</h3>
+
+<p>
+    Contact us for equipment packages
+    and bulk-order requirements.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>Custom Setup</h3>
+
+<p>
+    Tell us your available space and
+    requirements for a customised package.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<h3>After-Sales Support</h3>
+
+<p>
+    Service, spare parts and installation
+    can be arranged according to product.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+<div class="container">
+
+<h2>BUILD YOUR GYM.</h2>
+
+<p>
+    From one dumbbell to a complete commercial gym.
+</p>
+
+<a href="#contact" class="btn btn-primary">
+    REQUEST A QUOTE
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="small">CONTACT ALL FITNESS</span>
+
+<h2>Let's Build Your Setup</h2>
+
+<p>
+    Tell us what equipment you need.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-info">
+
+<h3>ALL FITNESS</h3>
+
+<p>
+    Heavy-duty gym equipment for home gyms,
+    commercial fitness centres, sports academies
+    and training facilities.
+</p>
+
+
+<div class="contact-detail">
+
+<strong>📞 Phone</strong>
+
+<span>+91 XXXXX XXXXX</span>
+
+</div>
+
+
+<div class="contact-detail">
+
+<strong>💬 WhatsApp</strong>
+
+<span>+91 XXXXX XXXXX</span>
+
+</div>
+
+
+<div class="contact-detail">
+
+<strong>✉ Email</strong>
+
+<span>sales@allfitness.in</span>
+
+</div>
+
+
+<div class="contact-detail">
+
+<strong>📍 Location</strong>
+
+<span>India</span>
+
+</div>
+
+</div>
+
+
+<div class="form">
+
+<form onsubmit="submitForm(event)">
+
+<input
+type="text"
+id="customerName"
+placeholder="Your Name"
+required
+>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="Mobile Number"
+required
+>
+
+<input
+type="email"
+id="customerEmail"
+placeholder="Email Address"
+>
+
+<select id="customerRequirement">
+
+<option value="">
+Select Requirement
+</option>
+
+<option>Weight Plates</option>
+
+<option>Dumbbells</option>
+
+<option>Barbells</option>
+
+<option>Gym Bench</option>
+
+<option>Strength Machines</option>
+
+<option>Complete Gym Setup</option>
+
+<option>Bulk Order</option>
+
+</select>
+
+<textarea
+id="customerMessage"
+placeholder="Tell us your requirement..."
+></textarea>
+
+<button type="submit">
+SEND ENQUIRY
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div class="footer-brand">
+
+<div class="logo">
+ALL<span>FITNESS</span>
+</div>
+
+<p>
+    Heavy-duty gym equipment designed
+    around strength, durability and
+    practical specifications.
+</p>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Shop</h4>
+
+<a href="#products">Weight Plates</a>
+<a href="#products">Dumbbells</a>
+<a href="#products">Barbells</a>
+<a href="#products">Machines</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Company</h4>
+
+<a href="#about">About Us</a>
+<a href="#quality">Quality</a>
+<a href="#contact">Contact</a>
+<a href="#contact">Bulk Orders</a>
+
+</div>
+
+
+<div class="footer-column">
+
+<h4>Support</h4>
+
+<a href="#contact">Get Quote</a>
+<a href="#contact">WhatsApp</a>
+<a href="#contact">Customer Support</a>
+
+</div>
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 ALL FITNESS. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- =========================
+     WHATSAPP
+========================= -->
+
+<a
+href="https://wa.me/91XXXXXXXXXX"
+class="whatsapp"
+target="_blank"
+title="Chat on WhatsApp"
+>
+💬
+</a>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div class="cart-overlay" id="cartOverlay">
+
+<div class="cart">
+
+<div class="cart-header">
+
+<h2>Your Cart</h2>
+
+<button
+class="close-cart"
+onclick="closeCart()"
+>
+×
+</button>
+
+</div>
+
+
+<div id="cartItems">
+
+<p style="color:#777">
+Your cart is empty.
+</p>
+
+</div>
+
+
+<div class="cart-total">
+
+<span>Total</span>
+
+<span id="cartTotal">
+₹0
+</span>
+
+</div>
+
+
+<button
+class="whatsapp-order"
+onclick="orderOnWhatsApp()"
+>
+ORDER ON WHATSAPP
+</button>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+let cart = [];
+
+
+/* =========================
+   ADD TO CART
+========================= */
+
+function addToCart(name,price){
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    updateCart();
+
+    alert(name + " added to cart!");
+
+}
+
+
+/* =========================
+   UPDATE CART
+========================= */
+
+function updateCart(){
+
+    document.getElementById("cartCount").innerText = cart.length;
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML =
+        '<p style="color:#777">Your cart is empty.</p>';
+
+        cartTotal.innerText = "₹0";
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+
+    cart.forEach((item,index)=>{
+
+        total += item.price;
+
+        const div =
+        document.createElement("div");
+
+        div.className = "cart-item";
+
+        div.innerHTML = `
+
+        <div>
+
+            <h4>${item.name}</h4>
+
+            <p>₹${item.price.toLocaleString("en-IN")}</p>
+
+        </div>
+
+        <button
+        class="remove"
+        onclick="removeItem(${index})">
+        Remove
+        </button>
+
+        `;
+
+        cartItems.appendChild(div);
+
+    });
+
+
+    cartTotal.innerText =
+    "₹" + total.toLocaleString("en-IN");
+
+}
+
+
+/* =========================
+   REMOVE
+========================= */
+
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* =========================
+   OPEN CART
+========================= */
+
+function openCart(){
+
+    document.getElementById("cartOverlay")
+    .style.display = "block";
+
+}
+
+
+/* =========================
+   CLOSE CART
+========================= */
+
+function closeCart(){
+
+    document.getElementById("cartOverlay")
+    .style.display = "none";
+
+}
+
+
+/* =========================
+   SEARCH + FILTER
+========================= */
+
+function filterProducts(){
+
+    const search =
+        document.getElementById("search")
+        .value.toLowerCase();
+
+    const category =
+        document.getElementById("categoryFilter")
+        .value;
+
+    const products =
+        document.querySelectorAll(".product-card");
+
+
+    products.forEach(product=>{
+
+        const name =
+            product.dataset.name;
+
+        const productCategory =
+            product.dataset.category;
+
+
+        const matchesSearch =
+            name.includes(search);
+
+        const matchesCategory =
+            category === "all" ||
+            productCategory === category;
+
+
+        if(matchesSearch && matchesCategory){
+
+            product.style.display = "block";
+
+        }else{
+
+            product.style.display = "none";
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   WHATSAPP CART ORDER
+========================= */
+
+function orderOnWhatsApp(){
+
+    if(cart.length === 0){
+
+        alert("Your cart is empty.");
+
+        return;
+
+    }
+
+
+    let message =
+    "Hello ALL FITNESS,%0A%0A" +
+    "I want to order:%0A";
+
+
+    let total = 0;
+
+
+    cart.forEach(item=>{
+
+        message +=
+        "- " +
+        item.name +
+        " - ₹" +
+        item.price +
+        "%0A";
+
+        total += item.price;
+
+    });
+
+
+    message +=
+    "%0ATotal: ₹" +
+    total +
+    "%0A%0A" +
+    "Please share availability and delivery details.";
+
+
+    /* REPLACE THIS NUMBER */
+
+    const phone =
+        "91XXXXXXXXXX";
+
+
+    window.open(
+        "https://wa.me/" +
+        phone +
+        "?text=" +
+        message,
+        "_blank"
+    );
+
+}
+
+
+/* =========================
+   CONTACT FORM
+========================= */
+
+function submitForm(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById("customerName")
+        .value;
+
+    const phone =
+        document.getElementById("customerPhone")
+        .value;
+
+    const requirement =
+        document.getElementById("customerRequirement")
+        .value;
+
+    const message =
+        document.getElementById("customerMessage")
+        .value;
+
+
+    const whatsappMessage =
+
+        "Hello ALL FITNESS,%0A%0A" +
+
+        "Name: " + name + "%0A" +
+
+        "Phone: " + phone + "%0A" +
+
+        "Requirement: " +
+        requirement + "%0A" +
+
+        "Message: " +
+        message;
+
+
+    const businessNumber =
+        "91XXXXXXXXXX";
+
+
+    window.open(
+
+        "https://wa.me/" +
+        businessNumber +
+        "?text=" +
+        whatsappMessage,
+
+        "_blank"
+
+    );
+
+}
+
+</script>
+
+</body>
+</html>
